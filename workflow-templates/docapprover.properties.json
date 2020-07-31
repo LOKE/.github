@@ -1,5 +1,12 @@
 {
     "name": "Doc Approver Workflow",
     "description": "Automatically approves doc PRs, and rejects those that have non-doc changes.",
-    "iconName": "doc"
+    "iconName": "doc",
+    "categories": [
+        "Javascript",
+        "Typescript"
+    ],
+    "filePatterns": [
+        "^README.md*"
+    ]
 }
