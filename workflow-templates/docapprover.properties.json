@@ -3,8 +3,8 @@
     "description": "Automatically approves doc PRs, and rejects those that have non-doc changes.",
     "iconName": "doc",
     "categories": [
-        "Javascript",
-        "Typescript"
+        "JavaScript",
+        "TypeScript"
     ],
     "filePatterns": [
         "^README.md*"
