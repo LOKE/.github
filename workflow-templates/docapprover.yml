@@ -1,0 +1,76 @@
+name: Documentation Auto-Approval
+on:
+  push:
+    branches:
+      - "doc/**"
+    paths: # No need to run if files aren't approvable
+      - ".github/workflows/docapprover.yml"
+      - "**/mkdocks.yml"
+      - "**/*.md"
+      - "!**/*.js"
+      - "!**/*.ts"
+      - "!**/*.tsx"
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch PR number
+        uses: actions/github-script@v2
+        id: pr
+        with:
+          result-encoding: string
+          script: |
+            const result = await github.repos.listPullRequestsAssociatedWithCommit({
+              owner: context.payload.repository.owner.name,
+              repo: context.payload.repository.name,
+              commit_sha: context.payload.head_commit.id
+            });
+            if (!result.data.length) {
+              console.log("No PR found");
+              return "";
+            }
+
+            const pr = result.data[0];
+
+            if (pr.state !== "open") {
+              console.log("PR is already " + pr.state);
+              return "";
+            }
+
+            return pr.number;
+      - name: Fetch changes
+        id: file_changes
+        uses: trilom/file-changes-action@v1.2.4
+        with:
+          prNumber: ${{ steps.pr.outputs.result }}
+        if: ${{ steps.pr.outputs.result }}
+      - name: Approve if possible
+        uses: actions/github-script@v2
+        id: check_changes_ok
+        with:
+          result-encoding: string
+          github-token: ${{ secrets.DOCAPPROVER_TOKEN }}
+          script: |
+            const files = ${{ steps.file_changes.outputs.files}}
+            const notAllowed = files.filter(f => {
+              if (f.endsWith(".md")) return false;
+              if (f.endsWith("mkdocs.yml")) return false;
+              if (f.endsWith("docapprover.yml")) return false;
+              if (f.endsWith(".pages")) return false;
+              if (f.endsWith(".png")) return false;
+              if (f.endsWith(".svg")) return false;
+              if (f.endsWith(".plantuml")) return false;
+              return true;
+            });
+            if (notAllowed.length) {
+              throw new Error("Will not approve. Found these files: " + JSON.stringify(notAllowed));
+              return;
+            }
+            await github.pulls.createReview({
+              owner: context.payload.repository.owner.name,
+              repo: context.payload.repository.name,
+              pull_number: ${{ steps.pr.outputs.result }},
+              event: "APPROVE",
+              body: "Automatically approved documentation only change",
+            });
+        if: ${{ steps.pr.outputs.result }}
