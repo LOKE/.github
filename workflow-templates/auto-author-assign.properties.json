@@ -1,0 +1,6 @@
+{
+  "name": "Auto Author Assign Workflow",
+  "description": "Automatically assigns PR and issue authors as assignees",
+  "iconName": "octicon person",
+  "categories": ["automation"]
+}
