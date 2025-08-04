@@ -4,25 +4,26 @@ Describe what this change means for non-engineering|Documentation only|Internal 
 
 Check only those that apply to this change.
 
-- [ ] Performed a self-review of code, removed extraneous comments, debug logging, checked code style
-- [ ] Change is off by default (configuration, feature flags, alt URL to enable) and can be disabled if issues arise
+- [ ] Self-reviewed code, removed extraneous comments, debug logging, checked code style
+- [ ] No change to users after merge (off-by-default configuration, feature flag, alt URL, etc.) and can be disabled if issues arise
 - [ ] Changes are documented (README, wiki, etc)
-- [ ] Automated tests added that prove change is effective/functional
+- [ ] Automated tests added
 - [ ] Manually tested changes
-- [ ] Assessed any performance impact is acceptable
-- [ ] Metrics added to track the impact of this change
-- [ ] I know how to revert this change if needed
+- [ ] Metrics added to track the usage/performance
+- [ ] I am confident I can revert this change
 - [ ] Database migrations are reversible without data loss (if applicable)
-- [ ] Any new dependencies are justified or have been approved
-- [ ] This is not a high risk change (if it is, please follow the high-risk change process)
+- [ ] Performance impact is acceptable (if applicable)
+- [ ] Any new dependencies are justified or have been approved (if applicable)
+- [ ] **This is NOT a high risk change** (if it is, please follow the high-risk change process)
 
 ### Testing Evidence
 
-How have you tested this change?
+What evidence supports that you have tested this change?
 
 - [ ] Test cases cover the new functionality or changes
 - [ ] Screenshots or logs of the changes (if applicable)
 - [ ] Performance benchmarks (if applicable)
+- [ ] Storybook cases (if applicable)
 
 ## Reviewer Checklist
 
