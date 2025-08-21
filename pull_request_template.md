@@ -11,7 +11,7 @@ Check only those that apply to this change.
 - [ ] Self-reviewed code, removed extraneous comments, debug logging, checked code style
 - [ ] No change to users after merge (off-by-default configuration, feature flag, alt URL, etc.) and can be disabled if issues arise (if this is not the case we may need stakeholder signoff)
 - [ ] Changes are documented (README, wiki, etc)
-- [ ] Automated tests added
+- [ ] Automated tests added or existing tests cover the new functionality or changes
 - [ ] Manually tested changes
 - [ ] Metrics added to track the usage/performance
 - [ ] I am confident I can revert this change
