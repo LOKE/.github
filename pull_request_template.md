@@ -4,35 +4,13 @@ Describe what this change means for non-engineering|Documentation only|Internal 
 
 Add any other details here about what this change does.
 
-## Submitter Checklist
+## Screenshots / Videos
 
-Check only those that apply to this change.
+##  I have:
+- [ ] Run and tested the code and provided clear evidence of this above
+- [ ] Self reviewed the code and removed extraneous comments, debug logging, checked code style
+- [ ] Listed any dependant PRs required for this change
+- [ ] Added tests where practical and possible
+- [ ] Documented a way to roll this change back if it is more than a code revert
 
-- [ ] Self-reviewed code, removed extraneous comments, debug logging, checked code style
-- [ ] No change to users after merge (off-by-default configuration, feature flag, alt URL, etc.) and can be disabled if issues arise (if this is not the case we may need stakeholder signoff)
-- [ ] Changes are documented (README, wiki, etc)
-- [ ] Automated tests added or existing tests cover the new functionality or changes
-- [ ] Manually tested changes
-- [ ] Metrics added to track the usage/performance
-- [ ] I am confident I can revert this change
-- [ ] Database migrations are reversible without data loss (if applicable)
-- [ ] Performance impact is acceptable (if applicable)
-- [ ] Any new dependencies are justified or have been approved (if applicable)
-- [ ] **This is NOT a high risk change** (if it is, please follow the high-risk change process)
-
-### Testing Evidence
-
-What evidence supports that you have tested this change?
-
-- [ ] Test cases cover the new functionality or changes
-- [ ] Screenshots or logs of the changes (if applicable)
-- [ ] Performance benchmarks (if applicable)
-- [ ] Storybook cases (if applicable)
-
-## Reviewer Checklist
-
-Note: if this PR affects authentication or payments please seek a secondary tester.
-
-- [ ] I am ok with code style and functionality
-- [ ] I have personally tested the feature
-- [ ] My review was not rushed due to time constraints
+_all the above **must** be ticked_
