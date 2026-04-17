@@ -1,8 +1,18 @@
 Describe what this change means for non-engineering|Documentation only|Internal change only
 
-[ORD-XXXX]
+[LOKE-XXXX]
 
 Add any other details here about what this change does.
+
+<!--
+## Related PRs
+- https://github.com/LOKE/example/pull/1
+-->
+
+<!--
+## Rollback Instructions
+
+-->
 
 ## Screenshots / Videos
 
