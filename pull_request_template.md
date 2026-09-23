@@ -17,7 +17,7 @@ Add any other details here about what this change does.
 ## Screenshots / Videos
 
 ##  I have:
-- [ ] Run and tested the code and provided clear evidence of this above
+- [ ] **Manually** run by a human and tested the code **alongside the systems it interacts** with and provided clear evidence of this above
 - [ ] Self reviewed the code and removed extraneous comments, debug logging, checked code style
 - [ ] Listed any dependant PRs required for this change
 - [ ] Added tests where practical and possible
